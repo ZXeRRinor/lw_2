@@ -111,17 +111,84 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lw_2
+# Target rules for targets named TripCalculator
 
 # Build rule for target.
-lw_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lw_2
-.PHONY : lw_2
+TripCalculator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TripCalculator
+.PHONY : TripCalculator
 
 # fast build rule for target.
-lw_2/fast:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/build
-.PHONY : lw_2/fast
+TripCalculator/fast:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/build
+.PHONY : TripCalculator/fast
+
+#=============================================================================
+# Target rules for targets named TripCalculator_autogen
+
+# Build rule for target.
+TripCalculator_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TripCalculator_autogen
+.PHONY : TripCalculator_autogen
+
+# fast build rule for target.
+TripCalculator_autogen/fast:
+	$(MAKE) -f CMakeFiles/TripCalculator_autogen.dir/build.make CMakeFiles/TripCalculator_autogen.dir/build
+.PHONY : TripCalculator_autogen/fast
+
+TripCalculator.o: TripCalculator.cpp.o
+
+.PHONY : TripCalculator.o
+
+# target to build an object file
+TripCalculator.cpp.o:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator.cpp.o
+.PHONY : TripCalculator.cpp.o
+
+TripCalculator.i: TripCalculator.cpp.i
+
+.PHONY : TripCalculator.i
+
+# target to preprocess a source file
+TripCalculator.cpp.i:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator.cpp.i
+.PHONY : TripCalculator.cpp.i
+
+TripCalculator.s: TripCalculator.cpp.s
+
+.PHONY : TripCalculator.s
+
+# target to generate assembly for a file
+TripCalculator.cpp.s:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator.cpp.s
+.PHONY : TripCalculator.cpp.s
+
+TripCalculator_autogen/mocs_compilation.o: TripCalculator_autogen/mocs_compilation.cpp.o
+
+.PHONY : TripCalculator_autogen/mocs_compilation.o
+
+# target to build an object file
+TripCalculator_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator_autogen/mocs_compilation.cpp.o
+.PHONY : TripCalculator_autogen/mocs_compilation.cpp.o
+
+TripCalculator_autogen/mocs_compilation.i: TripCalculator_autogen/mocs_compilation.cpp.i
+
+.PHONY : TripCalculator_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+TripCalculator_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator_autogen/mocs_compilation.cpp.i
+.PHONY : TripCalculator_autogen/mocs_compilation.cpp.i
+
+TripCalculator_autogen/mocs_compilation.s: TripCalculator_autogen/mocs_compilation.cpp.s
+
+.PHONY : TripCalculator_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+TripCalculator_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/TripCalculator_autogen/mocs_compilation.cpp.s
+.PHONY : TripCalculator_autogen/mocs_compilation.cpp.s
 
 main.o: main.cpp.o
 
@@ -129,7 +196,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +205,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +214,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -157,8 +224,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... lw_2"
+	@echo "... TripCalculator"
 	@echo "... edit_cache"
+	@echo "... TripCalculator_autogen"
+	@echo "... TripCalculator.o"
+	@echo "... TripCalculator.i"
+	@echo "... TripCalculator.s"
+	@echo "... TripCalculator_autogen/mocs_compilation.o"
+	@echo "... TripCalculator_autogen/mocs_compilation.i"
+	@echo "... TripCalculator_autogen/mocs_compilation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

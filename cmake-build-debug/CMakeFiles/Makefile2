@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/zxerrinor/Документы/cpp_programming/lw_2/cmake
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/lw_2.dir/all
+all: CMakeFiles/TripCalculator.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/lw_2.dir/clean
+clean: CMakeFiles/TripCalculator.dir/clean
+clean: CMakeFiles/TripCalculator_autogen.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/lw_2.dir
+# Target rules for target CMakeFiles/TripCalculator.dir
 
 # All Build rule for target.
-CMakeFiles/lw_2.dir/all:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/depend
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target lw_2"
-.PHONY : CMakeFiles/lw_2.dir/all
+CMakeFiles/TripCalculator.dir/all: CMakeFiles/TripCalculator_autogen.dir/all
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/depend
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target TripCalculator"
+.PHONY : CMakeFiles/TripCalculator.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/lw_2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/lw_2.dir/all
+CMakeFiles/TripCalculator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TripCalculator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/lw_2.dir/rule
+.PHONY : CMakeFiles/TripCalculator.dir/rule
 
 # Convenience name for target.
-lw_2: CMakeFiles/lw_2.dir/rule
+TripCalculator: CMakeFiles/TripCalculator.dir/rule
 
-.PHONY : lw_2
+.PHONY : TripCalculator
 
 # clean rule for target.
-CMakeFiles/lw_2.dir/clean:
-	$(MAKE) -f CMakeFiles/lw_2.dir/build.make CMakeFiles/lw_2.dir/clean
-.PHONY : CMakeFiles/lw_2.dir/clean
+CMakeFiles/TripCalculator.dir/clean:
+	$(MAKE) -f CMakeFiles/TripCalculator.dir/build.make CMakeFiles/TripCalculator.dir/clean
+.PHONY : CMakeFiles/TripCalculator.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/TripCalculator_autogen.dir
+
+# All Build rule for target.
+CMakeFiles/TripCalculator_autogen.dir/all:
+	$(MAKE) -f CMakeFiles/TripCalculator_autogen.dir/build.make CMakeFiles/TripCalculator_autogen.dir/depend
+	$(MAKE) -f CMakeFiles/TripCalculator_autogen.dir/build.make CMakeFiles/TripCalculator_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles --progress-num=5 "Built target TripCalculator_autogen"
+.PHONY : CMakeFiles/TripCalculator_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/TripCalculator_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TripCalculator_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zxerrinor/Документы/cpp_programming/lw_2/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/TripCalculator_autogen.dir/rule
+
+# Convenience name for target.
+TripCalculator_autogen: CMakeFiles/TripCalculator_autogen.dir/rule
+
+.PHONY : TripCalculator_autogen
+
+# clean rule for target.
+CMakeFiles/TripCalculator_autogen.dir/clean:
+	$(MAKE) -f CMakeFiles/TripCalculator_autogen.dir/build.make CMakeFiles/TripCalculator_autogen.dir/clean
+.PHONY : CMakeFiles/TripCalculator_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

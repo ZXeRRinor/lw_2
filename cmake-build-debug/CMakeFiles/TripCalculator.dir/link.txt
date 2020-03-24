@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TripCalculator.dir/TripCalculator_autogen/mocs_compilation.cpp.o CMakeFiles/TripCalculator.dir/main.cpp.o CMakeFiles/TripCalculator.dir/TripCalculator.cpp.o  -o TripCalculator  /usr/lib/libQt5Widgets.so.5.14.1 /usr/lib/libQt5Gui.so.5.14.1 /usr/lib/libQt5Core.so.5.14.1 
