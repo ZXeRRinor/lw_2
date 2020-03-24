@@ -2,6 +2,7 @@
 // Created by zxerrinor on 24.03.2020.
 //
 
+#include <sstream>
 #include "TripCalculator.h"
 
 void TripCalculator::setupUi() {
@@ -95,7 +96,7 @@ void TripCalculator::setupUi() {
     QMetaObject::connectSlotsByName(this);
 }
 
-private bool isFloat(std::string in) {
+bool isFloat(std::string in) {
     bool inputIsNumber = true;
     char dots = 0;
     for (char i : in) {
@@ -105,7 +106,7 @@ private bool isFloat(std::string in) {
     return inputIsNumber && (dots <= 1) && (in.length() > 0);
 }
 
-private bool isInt(std::string in) {
+bool isInt(std::string in) {
     bool inputIsNumber = true;
     for (char i : in) {
         inputIsNumber = inputIsNumber && isdigit(i);
@@ -114,9 +115,30 @@ private bool isInt(std::string in) {
 }
 
 void TripCalculator::calculate() {
-
+    auto rawInputTrip = trip->text().toStdString();
+    auto rawInputConsumption = consumption->text().toStdString();
+    auto rawInputFuelPrice = fuelPrice->text().toStdString();
+    auto rawInputNumberOfTrips = numberOfTrips->text().toStdString();
+    float inputTrip = 0;
+    float inputConsumption = 0;
+    float inputFuelPrice = 0;
+    int inputNumberOfTrips = 0;
+    bool invalidInput = false;
+    if (isFloat(rawInputTrip)) inputTrip = std::stof(rawInputTrip); else invalidInput = true;
+    if (isFloat(rawInputConsumption)) inputTrip = std::stof(rawInputConsumption); else invalidInput = true;
+    if (isFloat(rawInputFuelPrice)) inputTrip = std::stof(rawInputFuelPrice); else invalidInput = true;
+    if (isInt(rawInputNumberOfTrips)) inputNumberOfTrips = std::stoi(rawInputNumberOfTrips); else invalidInput = true;
+    std::string output;
+    if(invalidInput) {
+        output = "Некорректный ввод";
+    } else {
+        std::ostringstream stringStream;
+        stringStream << inputTrip / 100 * inputConsumption * inputFuelPrice * inputNumberOfTrips;
+        output = stringStream.str();
+    }
+    result->setText(QString::fromUtf8(output.c_str()));
 }
 
 void TripCalculator::quit() {
-
+    this->close();
 }
