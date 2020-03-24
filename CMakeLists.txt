@@ -9,5 +9,5 @@ find_package(Qt5Core)
 find_package(Qt5Widgets)
 
 # Определяем цель сборки
-add_executable(TripCalculator main.cpp ${QT_TEST_UI_HEADERS} TripCalculator.h TripCalculator.cpp TripCalculator.cpp TripCalculator.cpp TripCalculator.h)    # Исполняемые файлы
+add_executable(TripCalculator main.cpp ${QT_TEST_UI_HEADERS} TripCalculator.h TripCalculator.cpp)    # Исполняемые файлы
 target_link_libraries(TripCalculator ${Qt5Core_LIBRARIES} ${Qt5Widgets_LIBRARIES})
