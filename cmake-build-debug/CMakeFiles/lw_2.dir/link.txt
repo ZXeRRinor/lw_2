@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lw_2.dir/main.cpp.o  -o lw_2 
