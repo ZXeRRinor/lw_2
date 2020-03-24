@@ -95,6 +95,24 @@ void TripCalculator::setupUi() {
     QMetaObject::connectSlotsByName(this);
 }
 
+private bool isFloat(std::string in) {
+    bool inputIsNumber = true;
+    char dots = 0;
+    for (char i : in) {
+        inputIsNumber = inputIsNumber && (isdigit(i) || (i == ','));
+        if (i == ',') dots++;
+    }
+    return inputIsNumber && (dots <= 1) && (in.length() > 0);
+}
+
+private bool isInt(std::string in) {
+    bool inputIsNumber = true;
+    for (char i : in) {
+        inputIsNumber = inputIsNumber && isdigit(i);
+    }
+    return inputIsNumber && (in.length() > 0);
+}
+
 void TripCalculator::calculate() {
 
 }
