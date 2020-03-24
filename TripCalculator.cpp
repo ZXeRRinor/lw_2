@@ -18,12 +18,15 @@ void TripCalculator::setupUi() {
     fuelPrice = new QLineEdit(this);
     fuelPrice->setObjectName(QString::fromUtf8("fuelPrice"));
     fuelPrice->setGeometry(QRect(95, 133, 161, 32));
-    result = new QLineEdit(this);
-    result->setObjectName(QString::fromUtf8("result"));
-    result->setGeometry(QRect(95, 243, 161, 32));
     numberOfTrips = new QLineEdit(this);
     numberOfTrips->setObjectName(QString::fromUtf8("numberOfTrips"));
     numberOfTrips->setGeometry(QRect(481, 188, 161, 32));
+    result = new QLineEdit(this);
+    result->setObjectName(QString::fromUtf8("result"));
+    result->setGeometry(QRect(95, 243, 161, 32));
+    calculateButton = new QPushButton(this);
+    calculateButton->setObjectName(QString::fromUtf8("calculateButton"));
+    calculateButton->setGeometry(QRect(390, 300, 88, 34));
     exitButton = new QPushButton(this);
     exitButton->setObjectName(QString::fromUtf8("exitButton"));
     exitButton->setGeometry(QRect(530, 300, 88, 34));
@@ -54,22 +57,20 @@ void TripCalculator::setupUi() {
     label_9 = new QLabel(this);
     label_9->setObjectName(QString::fromUtf8("label_9"));
     label_9->setGeometry(QRect(370, 195, 99, 18));
-    calculateButton = new QPushButton(this);
-    calculateButton->setObjectName(QString::fromUtf8("calculateButton"));
-    calculateButton->setGeometry(QRect(390, 300, 88, 34));
     label_10 = new QLabel(this);
     label_10->setObjectName(QString::fromUtf8("label_10"));
-    label_10->setGeometry(QRect(322, 23, 58, 18));
-    QWidget::setTabOrder(trip, result);
-    QWidget::setTabOrder(result, consumption);
-    QWidget::setTabOrder(consumption, exitButton);
-    QWidget::setTabOrder(exitButton, fuelPrice);
+    label_10->setGeometry(QRect(163, 0, 331, 20));
+    label_10->setAlignment(Qt::AlignCenter);
+    QWidget::setTabOrder(trip, consumption);
+    QWidget::setTabOrder(consumption, fuelPrice);
     QWidget::setTabOrder(fuelPrice, numberOfTrips);
+    QWidget::setTabOrder(numberOfTrips, calculateButton);
+    QWidget::setTabOrder(calculateButton, result);
 
     QObject::connect(exitButton, SIGNAL(clicked()), this, SLOT(quit()));
     QObject::connect(calculateButton, SIGNAL(clicked()), this, SLOT(calculate()));
 
-    this->setWindowTitle(QCoreApplication::translate("this", "this", nullptr));
+    this->setWindowTitle(QCoreApplication::translate("this", "_", nullptr));
     exitButton->setText(QCoreApplication::translate("this", "\320\222\321\213\321\205\320\276\320\264", nullptr));
     label->setText(QCoreApplication::translate("this",
                                                "\320\240\320\260\321\201\321\201\321\202\320\276\321\217\320\275\320\270\320\265",
@@ -91,7 +92,9 @@ void TripCalculator::setupUi() {
     calculateButton->setText(QCoreApplication::translate("this",
                                                          "\320\240\320\260\321\201\321\201\321\207\320\270\321\202\320\260\321\202\321\214",
                                                          nullptr));
-    label_10->setText(QCoreApplication::translate("this", "TextLabel", nullptr));
+    label_10->setText(QCoreApplication::translate("this",
+                                                  "\320\237\321\200\320\276\320\263\321\200\320\260\320\274\320\274\320\260 \321\200\320\260\321\201\321\207\321\221\321\202\320\260 \321\206\320\265\320\275\321\213 \320\277\320\276\320\265\320\267\320\264\320\272\320\270 \320\275\320\260 \320\260\320\262\321\202\320\276\320\274\320\276\320\261\320\270\320\273\320\265",
+                                                  nullptr));
 
     QMetaObject::connectSlotsByName(this);
 }
@@ -125,11 +128,11 @@ void TripCalculator::calculate() {
     int inputNumberOfTrips = 0;
     bool invalidInput = false;
     if (isFloat(rawInputTrip)) inputTrip = std::stof(rawInputTrip); else invalidInput = true;
-    if (isFloat(rawInputConsumption)) inputTrip = std::stof(rawInputConsumption); else invalidInput = true;
-    if (isFloat(rawInputFuelPrice)) inputTrip = std::stof(rawInputFuelPrice); else invalidInput = true;
+    if (isFloat(rawInputConsumption)) inputConsumption = std::stof(rawInputConsumption); else invalidInput = true;
+    if (isFloat(rawInputFuelPrice)) inputFuelPrice = std::stof(rawInputFuelPrice); else invalidInput = true;
     if (isInt(rawInputNumberOfTrips)) inputNumberOfTrips = std::stoi(rawInputNumberOfTrips); else invalidInput = true;
     std::string output;
-    if(invalidInput) {
+    if (invalidInput) {
         output = "Некорректный ввод";
     } else {
         std::ostringstream stringStream;
